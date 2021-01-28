@@ -5,15 +5,12 @@ import lombok.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-
+@RequiredArgsConstructor
 public class Student {
 	private Integer id;
+	@NonNull
 	private String firstName;
+	@NonNull
 	private String lastName;
-
-	public Student(String firstName, String lastName) {
-		this.firstName = firstName;
-		this.lastName = lastName;
-	}
 
 }
