@@ -8,8 +8,8 @@ public class App {
 		mm.setMemory();
 		StudentsCollecton sc = mm.getSc();
 
-		// show all the students with lastName="Trajkovska"
-		System.out.println(sc.selectLastName("Trajkovska"));
+		// show all the students 
+		System.out.println(sc.selectAll());
 
 	}
 
