@@ -1,3 +1,4 @@
+
 package mk.iwec;
 
 import java.util.ArrayList;
@@ -9,10 +10,10 @@ import lombok.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class StudentsCollecton {
+public class StudentDAOImpl implements StudentDAO<Student> {
 	private List<Student> students = new ArrayList<Student>();
 
-	public void insertStudent(String firstName, String lastName) {
+	public void insert(String firstName, String lastName) {
 		int newId;
 		if (students.size() == 0) {
 			newId = 1;
@@ -22,7 +23,7 @@ public class StudentsCollecton {
 		students.add(new Student(newId, firstName, lastName));
 	}
 
-	public boolean deleteStudent(int id) {
+	public boolean delete(int id) {
 		if (students.size() == 0 || students.size() < id) {
 			return false;
 		} else {
@@ -31,7 +32,7 @@ public class StudentsCollecton {
 		}
 	}
 
-	public boolean updateStudent(int id, String firstName, String lastName) {
+	public boolean updateObject(int id, String firstName, String lastName) {
 		// Update the student with id with the new firstName and lastName
 		if (students.size() == 0 || students.size() < id) {
 			return false;
@@ -44,7 +45,7 @@ public class StudentsCollecton {
 
 	}
 
-	public boolean updateStudentName(int id, String firstName) {
+	public boolean updateObjectName(int id, String firstName) {
 		// Update the student with id with the new firstName
 		if (students.size() == 0 || students.size() < id) {
 			return false;
@@ -56,7 +57,7 @@ public class StudentsCollecton {
 
 	}
 
-	public boolean updateStudentLastName(int id, String lastName) {
+	public boolean updateObjectLastName(int id, String lastName) {
 		// Update the student with id with the new firstName and lastName
 		if (students.size() == 0 || students.size() < id) {
 			return false;
